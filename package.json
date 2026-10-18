@@ -1,0 +1,27 @@
+{
+  "name": "our-private-story",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "只属于两个人的恋爱手记：Vue 3 前端 + Koa2 后端",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c magenta,cyan \"node --env-file-if-exists=.env --watch server/index.js\" \"vite --host 127.0.0.1\"",
+    "dev:client": "vite --host 127.0.0.1",
+    "dev:server": "node --env-file-if-exists=.env --watch server/index.js",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@koa/router": "^15.7.0",
+    "koa": "^2.16.4",
+    "koa-bodyparser": "^4.4.1",
+    "koa-static": "^5.0.0",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.10",
+    "concurrently": "^10.0.6",
+    "vite": "^8.3.4"
+  }
+}

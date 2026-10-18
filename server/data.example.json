@@ -1,0 +1,22 @@
+{
+  "meeting": {
+    "plan": {
+      "date": "",
+      "time": "",
+      "place": "",
+      "note": "",
+      "updatedAt": null
+    },
+    "todos": [],
+    "notes": []
+  },
+  "travel": {
+    "todos": [],
+    "notes": []
+  },
+  "wish": {
+    "todos": [],
+    "notes": []
+  },
+  "memories": []
+}
