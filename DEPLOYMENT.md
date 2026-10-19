@@ -362,14 +362,14 @@ sudo systemctl status our-story
 
 ### 方案 B：Docker Compose
 
-如果以后需要迁移服务器或增加环境，可以改成：
+如果服务器已有 `nginx + koa` 容器结构，可以直接使用项目里的：
 
-- `Dockerfile`：构建 Vue 生产包 + Node 运行
-- `docker-compose.yml`：Koa 容器 + Nginx 容器
-- data/uploads 挂载到宿主机卷
-- 证书仍然放在宿主机 Nginx 或 Caddy
+- `docker-compose.yml`
+- `nginx/conf/nginx.conf`
 
-对目前只有两个人的站点来说不是必须的。
+详细操作见 [DOCKER.md](DOCKER.md)。默认独立使用 `ourstory` 网络和宿主机端口 `8081`，避免与现有 `partyquery` 站点的 `8080` 冲突。
+
+对目前只有两个人的站点来说，Docker 不是必须的。
 
 ### 方案 C：PaaS / 托管平台
 

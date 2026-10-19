@@ -3,6 +3,7 @@
 一个只属于两个人的恋爱计划空间。入口是一把悬浮的黄铜锁，输入暗号后，进入由 **Vue 3** 构建、**Koa2** 提供数据服务的三块计划面板。
 
 > 准备迁移到公网云服务器时，请先看 [DEPLOYMENT.md](DEPLOYMENT.md)。
+> 如果服务器已经使用现有的 Nginx + Koa Docker 结构，请直接看 [DOCKER.md](DOCKER.md)。
 
 ## 立即预览
 
@@ -96,6 +97,16 @@ pnpm build
 pnpm start
 # http://127.0.0.1:5500
 ```
+
+如果使用现有服务器的 Docker Compose 结构：
+
+```bash
+pnpm build
+docker compose up -d
+# 默认 http://服务器IP:8081
+```
+
+详见 [DOCKER.md](DOCKER.md)。
 
 ## 配置
 
