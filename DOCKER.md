@@ -53,12 +53,19 @@ docker compose version
 将项目代码和构建产物上传到服务器，例如 `/opt/ourstory`：
 
 ```bash
-rsync -avz --exclude node_modules --exclude .git ./ user@服务器:/opt/ourstory/
+rsync -avz \
+  --exclude node_modules \
+  --exclude .git \
+  --exclude .env \
+  --exclude HANDOFF.md \
+  ./ user@服务器:/opt/ourstory/
 ```
+
+`.env` 不要从本地直接复制到服务器；请在服务器上重新创建，并使用新的强暗号。`server/data.json` 和 `server/uploads/` 会跟随目录一起上传，用于迁移现有数据。
 
 如果服务器上还没有当前数据，Koa 首次启动会自动创建 `server/data.json` 和 `server/uploads/`。
 
-如果要迁移本地数据：
+如果要单独迁移本地数据：
 
 ```bash
 scp server/data.json user@服务器:/opt/ourstory/server/data.json
